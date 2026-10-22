@@ -1,0 +1,335 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Servicios | Operadora de Inmuebles Gallyno</title>
+    
+    <!-- Favicon -->
+    <link rel="icon" type="image/png" href="assets/logo.png">
+
+    <!-- Fuentes de Google -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700&family=Montserrat:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Lucide Icons -->
+    <script src="https://unpkg.com/lucide@latest"></script>
+    
+    <style>
+        body { 
+            font-family: 'Lato', sans-serif; 
+            background-color: #ffffff; 
+            color: #1a1a1a; 
+        }
+        h1, h2, h3, h4, h5, .font-heading { 
+            font-family: 'Montserrat', sans-serif; 
+        }
+        .tech-border {
+            border-width: 1px;
+            border-color: #e5e5e5;
+        }
+    </style>
+</head>
+<body class="overflow-x-hidden antialiased selection:bg-black selection:text-white">
+
+    <!-- BARRA SUPERIOR DE CONTACTO -->
+    <div class="bg-black text-white py-2.5 text-xs tracking-wider hidden md:block border-b border-neutral-800">
+        <div class="max-w-screen-2xl mx-auto px-6 lg:px-12 flex justify-between items-center">
+            <div class="flex gap-8">
+                <span class="flex items-center gap-2 text-neutral-300">
+                    <i data-lucide="map-pin" class="w-3.5 h-3.5 text-neutral-400"></i> Los Lagos Continental, Saltillo, Coahuila
+                </span>
+                <span class="flex items-center gap-2 text-neutral-300">
+                    <i data-lucide="mail" class="w-3.5 h-3.5 text-neutral-400"></i> gallyno.gl@outlook.com
+                </span>
+            </div>
+            <div>
+                <span class="flex items-center gap-2 font-semibold text-white">
+                    <i data-lucide="phone" class="w-3.5 h-3.5 text-neutral-400"></i> 844-176-5448
+                </span>
+            </div>
+        </div>
+    </div>
+
+    <!-- NAVEGACIÓN PRINCIPAL (Ajustada a h-20) -->
+    <nav class="w-full bg-white tech-border border-b sticky top-0 z-50">
+        <div class="max-w-screen-2xl mx-auto px-6 lg:px-12 h-20 flex justify-between items-center">
+            
+            <!-- LOGO (.png) -->
+            <a href="index.html" class="flex items-center shrink-0">
+                <img src="assets/logo.png" alt="Gallyno Logo" class="h-14 md:h-16 w-auto object-contain">
+            </a>
+            
+            <!-- Enlaces de Escritorio -->
+            <div class="hidden md:flex gap-10 items-center">
+                <a href="index.html" class="text-xs uppercase tracking-widest font-semibold text-neutral-500 hover:text-black transition-colors">Inicio</a>
+                <a href="nosotros.html" class="text-xs uppercase tracking-widest font-semibold text-neutral-500 hover:text-black transition-colors">Nosotros</a>
+                <a href="servicios.html" class="text-xs uppercase tracking-widest font-bold text-black border-b-2 border-black pb-1">Servicios</a>
+                <a href="contacto.html" class="bg-black text-white text-xs uppercase tracking-widest font-bold px-6 py-3 hover:bg-neutral-800 transition-colors">Contacto</a>
+            </div>
+            
+            <!-- Botón Menú Móvil -->
+            <button id="btn-open-menu" class="md:hidden text-black focus:outline-none" aria-label="Abrir menú">
+                <i data-lucide="menu" class="w-7 h-7 stroke-[1.5]"></i>
+            </button>
+        </div>
+    </nav>
+
+    <!-- MENÚ MÓVIL FULLSCREEN -->
+    <div id="mobile-menu" class="fixed inset-0 bg-black z-[100] translate-x-full transition-transform duration-500 ease-in-out flex flex-col justify-between p-8 md:hidden">
+        <div class="flex justify-between items-center border-b border-neutral-800 pb-6">
+            <span class="font-heading text-sm font-bold tracking-widest text-white uppercase">Gallyno</span>
+            <button id="btn-close-menu" class="text-white focus:outline-none" aria-label="Cerrar menú">
+                <i data-lucide="x" class="w-8 h-8 stroke-[1.5]"></i>
+            </button>
+        </div>
+        
+        <div class="flex flex-col gap-8 my-auto">
+            <a href="index.html" class="mobile-link font-heading text-2xl font-light text-neutral-400 hover:text-white uppercase tracking-widest transition-colors">Inicio</a>
+            <a href="nosotros.html" class="mobile-link font-heading text-2xl font-light text-neutral-400 hover:text-white uppercase tracking-widest transition-colors">Nosotros</a>
+            <a href="servicios.html" class="mobile-link font-heading text-2xl font-bold text-white uppercase tracking-widest">Servicios</a>
+            <a href="contacto.html" class="mobile-link font-heading text-2xl font-light text-neutral-400 hover:text-white uppercase tracking-widest transition-colors">Contacto</a>
+        </div>
+
+        <div class="border-t border-neutral-800 pt-6 text-neutral-400 text-xs space-y-2">
+            <p class="flex items-center gap-2"><i data-lucide="phone" class="w-4 h-4"></i> 844-176-5448</p>
+            <p class="flex items-center gap-2"><i data-lucide="mail" class="w-4 h-4"></i> gallyno.gl@outlook.com</p>
+        </div>
+    </div>
+
+    <!-- ENCABEZADO DE PÁGINA -->
+    <header class="bg-black text-white py-20 px-6 lg:px-12 border-b border-neutral-800">
+        <div class="max-w-screen-2xl mx-auto">
+            <span class="text-xs uppercase tracking-[0.25em] font-semibold text-neutral-400 block mb-4">Catálogo Técnico</span>
+            <h1 class="font-heading text-3xl md:text-5xl font-extrabold uppercase tracking-tight max-w-4xl leading-tight">
+                Servicios especializados en construcción, arquitectura e ingeniería
+            </h1>
+        </div>
+    </header>
+
+    <!-- SECCIÓN: DETALLE DE SERVICIOS -->
+    <section class="py-24 px-6 lg:px-12 max-w-screen-2xl mx-auto">
+        <div class="space-y-16">
+            
+            <!-- SERVICIO 1 -->
+            <div class="grid lg:grid-cols-12 gap-12 items-start tech-border p-8 lg:p-12 bg-white">
+                <div class="lg:col-span-5 space-y-4">
+                    <span class="text-xs font-mono text-neutral-400 block">ÁREA 01</span>
+                    <h2 class="font-heading text-2xl lg:text-3xl font-extrabold uppercase text-black">Construcción de Inmuebles</h2>
+                    <p class="text-neutral-500 font-light text-sm leading-relaxed">
+                        Desarrollamos y ejecutamos proyectos de edificación comercial, institucional y de servicios adaptados a los estándares normativos y operativos más exigentes.
+                    </p>
+                </div>
+                <div class="lg:col-span-7 border-t lg:border-t-0 lg:border-l tech-border pt-8 lg:pt-0 lg:pl-12">
+                    <h3 class="font-heading text-xs font-bold uppercase tracking-widest text-black mb-6">Capacidades de Ejecución:</h3>
+                    <ul class="grid sm:grid-cols-2 gap-4 text-sm font-light text-neutral-600">
+                        <li class="flex items-start gap-3">
+                            <i data-lucide="check" class="w-4 h-4 text-black shrink-0 mt-1"></i>
+                            <span>Edificación comercial e institucional</span>
+                        </li>
+                        <li class="flex items-start gap-3">
+                            <i data-lucide="check" class="w-4 h-4 text-black shrink-0 mt-1"></i>
+                            <span>Desarrollo de centros de servicio</span>
+                        </li>
+                        <li class="flex items-start gap-3">
+                            <i data-lucide="check" class="w-4 h-4 text-black shrink-0 mt-1"></i>
+                            <span>Adecuación y remodelación de espacios</span>
+                        </li>
+                        <li class="flex items-start gap-3">
+                            <i data-lucide="check" class="w-4 h-4 text-black shrink-0 mt-1"></i>
+                            <span>Supervisión y control de obra en sitio</span>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+
+            <!-- SERVICIO 2 -->
+            <div class="grid lg:grid-cols-12 gap-12 items-start tech-border p-8 lg:p-12 bg-white">
+                <div class="lg:col-span-5 space-y-4">
+                    <span class="text-xs font-mono text-neutral-400 block">ÁREA 02</span>
+                    <h2 class="font-heading text-2xl lg:text-3xl font-extrabold uppercase text-black">Servicios de Arquitectura</h2>
+                    <p class="text-neutral-500 font-light text-sm leading-relaxed">
+                        Planeación integral y diseño de proyectos arquitectónicos que combinan estética, funcionalidad operativa y eficiencia espacial.
+                    </p>
+                </div>
+                <div class="lg:col-span-7 border-t lg:border-t-0 lg:border-l tech-border pt-8 lg:pt-0 lg:pl-12">
+                    <h3 class="font-heading text-xs font-bold uppercase tracking-widest text-black mb-6">Capacidades de Diseño:</h3>
+                    <ul class="grid sm:grid-cols-2 gap-4 text-sm font-light text-neutral-600">
+                        <li class="flex items-start gap-3">
+                            <i data-lucide="check" class="w-4 h-4 text-black shrink-0 mt-1"></i>
+                            <span>Diseño conceptual y anteproyectos</span>
+                        </li>
+                        <li class="flex items-start gap-3">
+                            <i data-lucide="check" class="w-4 h-4 text-black shrink-0 mt-1"></i>
+                            <span>Desarrollo de proyectos ejecutivos</span>
+                        </li>
+                        <li class="flex items-start gap-3">
+                            <i data-lucide="check" class="w-4 h-4 text-black shrink-0 mt-1"></i>
+                            <span>Planificación y distribución de espacios</span>
+                        </li>
+                        <li class="flex items-start gap-3">
+                            <i data-lucide="check" class="w-4 h-4 text-black shrink-0 mt-1"></i>
+                            <span>Asesoría en licencias y normatividad</span>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+
+            <!-- SERVICIO 3 -->
+            <div class="grid lg:grid-cols-12 gap-12 items-start tech-border p-8 lg:p-12 bg-white">
+                <div class="lg:col-span-5 space-y-4">
+                    <span class="text-xs font-mono text-neutral-400 block">ÁREA 03</span>
+                    <h2 class="font-heading text-2xl lg:text-3xl font-extrabold uppercase text-black">Servicios Inmobiliarios</h2>
+                    <p class="text-neutral-500 font-light text-sm leading-relaxed">
+                        Gestión técnica y actividades complementarias orientadas a la factibilidad, operación y desarrollo eficiente de proyectos inmobiliarios.
+                    </p>
+                </div>
+                <div class="lg:col-span-7 border-t lg:border-t-0 lg:border-l tech-border pt-8 lg:pt-0 lg:pl-12">
+                    <h3 class="font-heading text-xs font-bold uppercase tracking-widest text-black mb-6">Servicios Complementarios:</h3>
+                    <ul class="grid sm:grid-cols-2 gap-4 text-sm font-light text-neutral-600">
+                        <li class="flex items-start gap-3">
+                            <i data-lucide="check" class="w-4 h-4 text-black shrink-0 mt-1"></i>
+                            <span>Gestión de proyectos inmobiliarios</span>
+                        </li>
+                        <li class="flex items-start gap-3">
+                            <i data-lucide="check" class="w-4 h-4 text-black shrink-0 mt-1"></i>
+                            <span>Análisis técnico de predios e inmuebles</span>
+                        </li>
+                        <li class="flex items-start gap-3">
+                            <i data-lucide="check" class="w-4 h-4 text-black shrink-0 mt-1"></i>
+                            <span>Coordinación operativa de activos</span>
+                        </li>
+                        <li class="flex items-start gap-3">
+                            <i data-lucide="check" class="w-4 h-4 text-black shrink-0 mt-1"></i>
+                            <span>Estudios de factibilidad física</span>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+
+            <!-- SERVICIO 4 -->
+            <div class="grid lg:grid-cols-12 gap-12 items-start tech-border p-8 lg:p-12 bg-white">
+                <div class="lg:col-span-5 space-y-4">
+                    <span class="text-xs font-mono text-neutral-400 block">ÁREA 04</span>
+                    <h2 class="font-heading text-2xl lg:text-3xl font-extrabold uppercase text-black">Ingeniería Civil y Obra Pesada</h2>
+                    <p class="text-neutral-500 font-light text-sm leading-relaxed">
+                        Ejecución técnica de obras de infraestructura, movimiento de tierras, cimentaciones y soluciones de ingeniería para proyectos de gran escala.
+                    </p>
+                </div>
+                <div class="lg:col-span-7 border-t lg:border-t-0 lg:border-l tech-border pt-8 lg:pt-0 lg:pl-12">
+                    <h3 class="font-heading text-xs font-bold uppercase tracking-widest text-black mb-6">Especialización Técnica:</h3>
+                    <ul class="grid sm:grid-cols-2 gap-4 text-sm font-light text-neutral-600">
+                        <li class="flex items-start gap-3">
+                            <i data-lucide="check" class="w-4 h-4 text-black shrink-0 mt-1"></i>
+                            <span>Obras de infraestructura urbana</span>
+                        </li>
+                        <li class="flex items-start gap-3">
+                            <i data-lucide="check" class="w-4 h-4 text-black shrink-0 mt-1"></i>
+                            <span>Ingeniería de cimentación y terracerías</span>
+                        </li>
+                        <li class="flex items-start gap-3">
+                            <i data-lucide="check" class="w-4 h-4 text-black shrink-0 mt-1"></i>
+                            <span>Redes de servicio y urbanización</span>
+                        </li>
+                        <li class="flex items-start gap-3">
+                            <i data-lucide="check" class="w-4 h-4 text-black shrink-0 mt-1"></i>
+                            <span>Ejecución de obra pesada especializada</span>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- BANNER DE CONTACTO -->
+    <section class="bg-black text-white py-16 px-6 lg:px-12 border-t border-neutral-800">
+        <div class="max-w-screen-2xl mx-auto flex flex-col md:flex-row justify-between items-center gap-8">
+            <div>
+                <h3 class="font-heading text-2xl font-extrabold uppercase mb-2">¿Tiene un proyecto en puerta?</h3>
+                <p class="text-neutral-400 text-sm font-light">Escriba a nuestro equipo técnico para evaluar la factibilidad y cotización de su obra.</p>
+            </div>
+            <a href="contacto.html" class="bg-white text-black text-xs uppercase tracking-widest font-extrabold px-8 py-4 hover:bg-neutral-200 transition-colors shrink-0">
+                Solicitar Asesoría
+            </a>
+        </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer class="bg-neutral-950 text-white pt-20 pb-10 border-t border-neutral-800">
+        <div class="max-w-screen-2xl mx-auto px-6 lg:px-12 grid md:grid-cols-12 gap-12 mb-16">
+            
+            <!-- Identidad Texto Puro -->
+            <div class="md:col-span-5 space-y-4">
+                <h3 class="font-heading font-extrabold text-lg uppercase tracking-wider text-white">
+                    OPERADORA DE INMUEBLES GALLYNO
+                </h3>
+                <p class="text-neutral-400 text-sm font-light leading-relaxed max-w-md">
+                    Empresa dedicada a la construcción, arquitectura e ingeniería civil para el desarrollo de infraestructura e inmuebles de alta calidad.
+                </p>
+            </div>
+
+            <!-- Navegación -->
+            <div class="md:col-span-3 space-y-4">
+                <h4 class="font-heading text-xs uppercase tracking-widest font-bold text-white">Navegación</h4>
+                <ul class="space-y-2.5 text-sm font-light text-neutral-400">
+                    <li><a href="index.html" class="hover:text-white transition-colors">Inicio</a></li>
+                    <li><a href="nosotros.html" class="hover:text-white transition-colors">Nosotros</a></li>
+                    <li><a href="servicios.html" class="hover:text-white transition-colors">Servicios</a></li>
+                    <li><a href="contacto.html" class="hover:text-white transition-colors">Contacto</a></li>
+                </ul>
+            </div>
+
+            <!-- Datos Directos -->
+            <div class="md:col-span-4 space-y-4">
+                <h4 class="font-heading text-xs uppercase tracking-widest font-bold text-white">Oficinas y Contacto</h4>
+                <ul class="space-y-3 text-sm font-light text-neutral-400">
+                    <li class="flex items-start gap-3">
+                        <i data-lucide="map-pin" class="w-4 h-4 text-white shrink-0 mt-1"></i>
+                        <span>Nazario Ortiz Garza #2060 Int. 804-A, Col. Los Lagos Continental, Saltillo, Coahuila. C.P. 25253</span>
+                    </li>
+                    <li class="flex items-center gap-3">
+                        <i data-lucide="phone" class="w-4 h-4 text-white shrink-0"></i>
+                        <span>844-176-5448</span>
+                    </li>
+                    <li class="flex items-center gap-3">
+                        <i data-lucide="mail" class="w-4 h-4 text-white shrink-0"></i>
+                        <span>gallyno.gl@outlook.com</span>
+                    </li>
+                </ul>
+            </div>
+
+        </div>
+
+        <div class="max-w-screen-2xl mx-auto px-6 lg:px-12 border-t border-neutral-900 pt-8 flex flex-col md:flex-row justify-between items-center gap-4 text-xs text-neutral-500 font-light">
+            <p>© 2026 Operadora de Inmuebles Gallyno. Todos los derechos reservados.</p>
+        </div>
+    </footer>
+
+    <!-- SCRIPT DE INTERACTIVIDAD -->
+    <script>
+        lucide.createIcons();
+
+        const btnOpenMenu = document.getElementById('btn-open-menu');
+        const btnCloseMenu = document.getElementById('btn-close-menu');
+        const mobileMenu = document.getElementById('mobile-menu');
+        const mobileLinks = document.querySelectorAll('.mobile-link');
+
+        btnOpenMenu.addEventListener('click', () => {
+            mobileMenu.classList.remove('translate-x-full');
+            document.body.style.overflow = 'hidden'; 
+        });
+
+        const closeMenu = () => {
+            mobileMenu.classList.add('translate-x-full');
+            document.body.style.overflow = ''; 
+        };
+
+        btnCloseMenu.addEventListener('click', closeMenu);
+        mobileLinks.forEach(link => link.addEventListener('click', closeMenu));
+    </script>
+</body>
+</html>

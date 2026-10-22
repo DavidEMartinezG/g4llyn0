@@ -1,0 +1,292 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contacto y Ubicación | Operadora de Inmuebles Gallyno</title>
+    
+    <!-- Favicon -->
+    <link rel="icon" type="image/png" href="assets/logo.png">
+
+    <!-- Fuentes de Google -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700&family=Montserrat:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Lucide Icons -->
+    <script src="https://unpkg.com/lucide@latest"></script>
+    
+    <style>
+        body { 
+            font-family: 'Lato', sans-serif; 
+            background-color: #ffffff; 
+            color: #1a1a1a; 
+        }
+        h1, h2, h3, h4, h5, .font-heading { 
+            font-family: 'Montserrat', sans-serif; 
+        }
+        .tech-border {
+            border-width: 1px;
+            border-color: #e5e5e5;
+        }
+    </style>
+</head>
+<body class="overflow-x-hidden antialiased selection:bg-black selection:text-white">
+
+    <!-- BARRA SUPERIOR DE CONTACTO -->
+    <div class="bg-black text-white py-2.5 text-xs tracking-wider hidden md:block border-b border-neutral-800">
+        <div class="max-w-screen-2xl mx-auto px-6 lg:px-12 flex justify-between items-center">
+            <div class="flex gap-8">
+                <span class="flex items-center gap-2 text-neutral-300">
+                    <i data-lucide="map-pin" class="w-3.5 h-3.5 text-neutral-400"></i> Los Lagos Continental, Saltillo, Coahuila
+                </span>
+                <span class="flex items-center gap-2 text-neutral-300">
+                    <i data-lucide="mail" class="w-3.5 h-3.5 text-neutral-400"></i> gallyno.gl@outlook.com
+                </span>
+            </div>
+            <div>
+                <span class="flex items-center gap-2 font-semibold text-white">
+                    <i data-lucide="phone" class="w-3.5 h-3.5 text-neutral-400"></i> 844-176-5448
+                </span>
+            </div>
+        </div>
+    </div>
+
+    <!-- NAVEGACIÓN PRINCIPAL (Ajustada a h-20) -->
+    <nav class="w-full bg-white tech-border border-b sticky top-0 z-50">
+        <div class="max-w-screen-2xl mx-auto px-6 lg:px-12 h-20 flex justify-between items-center">
+            
+            <!-- LOGO (.png) -->
+            <a href="index.html" class="flex items-center shrink-0">
+                <img src="assets/logo.png" alt="Gallyno Logo" class="h-14 md:h-16 w-auto object-contain">
+            </a>
+            
+            <!-- Enlaces de Escritorio -->
+            <div class="hidden md:flex gap-10 items-center">
+                <a href="index.html" class="text-xs uppercase tracking-widest font-semibold text-neutral-500 hover:text-black transition-colors">Inicio</a>
+                <a href="nosotros.html" class="text-xs uppercase tracking-widest font-semibold text-neutral-500 hover:text-black transition-colors">Nosotros</a>
+                <a href="servicios.html" class="text-xs uppercase tracking-widest font-semibold text-neutral-500 hover:text-black transition-colors">Servicios</a>
+                <a href="contacto.html" class="text-xs uppercase tracking-widest font-bold text-black border-b-2 border-black pb-1">Contacto</a>
+            </div>
+            
+            <!-- Botón Menú Móvil -->
+            <button id="btn-open-menu" class="md:hidden text-black focus:outline-none" aria-label="Abrir menú">
+                <i data-lucide="menu" class="w-7 h-7 stroke-[1.5]"></i>
+            </button>
+        </div>
+    </nav>
+
+    <!-- MENÚ MÓVIL FULLSCREEN -->
+    <div id="mobile-menu" class="fixed inset-0 bg-black z-[100] translate-x-full transition-transform duration-500 ease-in-out flex flex-col justify-between p-8 md:hidden">
+        <div class="flex justify-between items-center border-b border-neutral-800 pb-6">
+            <span class="font-heading text-sm font-bold tracking-widest text-white uppercase">Gallyno</span>
+            <button id="btn-close-menu" class="text-white focus:outline-none" aria-label="Cerrar menú">
+                <i data-lucide="x" class="w-8 h-8 stroke-[1.5]"></i>
+            </button>
+        </div>
+        
+        <div class="flex flex-col gap-8 my-auto">
+            <a href="index.html" class="mobile-link font-heading text-2xl font-light text-neutral-400 hover:text-white uppercase tracking-widest transition-colors">Inicio</a>
+            <a href="nosotros.html" class="mobile-link font-heading text-2xl font-light text-neutral-400 hover:text-white uppercase tracking-widest transition-colors">Nosotros</a>
+            <a href="servicios.html" class="mobile-link font-heading text-2xl font-light text-neutral-400 hover:text-white uppercase tracking-widest transition-colors">Servicios</a>
+            <a href="contacto.html" class="mobile-link font-heading text-2xl font-bold text-white uppercase tracking-widest">Contacto</a>
+        </div>
+
+        <div class="border-t border-neutral-800 pt-6 text-neutral-400 text-xs space-y-2">
+            <p class="flex items-center gap-2"><i data-lucide="phone" class="w-4 h-4"></i> 844-176-5448</p>
+            <p class="flex items-center gap-2"><i data-lucide="mail" class="w-4 h-4"></i> gallyno.gl@outlook.com</p>
+        </div>
+    </div>
+
+    <!-- ENCABEZADO DE PÁGINA -->
+    <header class="bg-black text-white py-20 px-6 lg:px-12 border-b border-neutral-800">
+        <div class="max-w-screen-2xl mx-auto">
+            <span class="text-xs uppercase tracking-[0.25em] font-semibold text-neutral-400 block mb-4">Ubicación y Canales Directos</span>
+            <h1 class="font-heading text-3xl md:text-5xl font-extrabold uppercase tracking-tight max-w-4xl leading-tight">
+                Contacto Técnico y Oficinas Operativas
+            </h1>
+        </div>
+    </header>
+
+    <!-- SECCIÓN: DATOS CORPORATIVOS & MAPA INTERACTIVO -->
+    <section class="py-24 bg-white">
+        <div class="max-w-screen-2xl mx-auto px-6 lg:px-12">
+            
+            <div class="grid lg:grid-cols-12 gap-12 items-stretch">
+                
+                <!-- COLUMNA IZQUIERDA: DATOS DE CONTACTO DIRECTO -->
+                <div class="lg:col-span-5 bg-neutral-50 p-8 lg:p-12 tech-border flex flex-col justify-between space-y-8">
+                    
+                    <div>
+                        <span class="text-xs font-mono text-neutral-400 block mb-2">Saltillo, Coahuila</span>
+                        <h2 class="font-heading text-2xl font-extrabold uppercase text-black mb-3">Oficinas Centrales</h2>
+                        <p class="text-neutral-500 font-light leading-relaxed text-sm">
+                            Le invitamos a ponerse en contacto con nuestro departamento de ingeniería para agendar una reunión o coordinar visitas técnicas a sitio.
+                        </p>
+                    </div>
+
+                    <div class="space-y-6 pt-6 border-t tech-border">
+                        
+                        <!-- Dirección -->
+                        <div class="flex items-start gap-4">
+                            <div class="w-10 h-10 bg-black text-white flex items-center justify-center shrink-0 mt-1">
+                                <i data-lucide="map-pin" class="w-5 h-5 stroke-[1.5]"></i>
+                            </div>
+                            <div>
+                                <h4 class="font-heading text-xs font-bold uppercase tracking-wider text-black mb-1">Domicilio Fiscal y Técnico</h4>
+                                <p class="text-sm font-light text-neutral-600 leading-relaxed">
+                                    Nazario Ortiz Garza #2060 Int. 804-A<br>
+                                    Col. Los Lagos Continental<br>
+                                    Saltillo, Coahuila. C.P. 25253
+                                </p>
+                            </div>
+                        </div>
+
+                        <!-- Teléfono -->
+                        <div class="flex items-start gap-4">
+                            <div class="w-10 h-10 bg-black text-white flex items-center justify-center shrink-0 mt-1">
+                                <i data-lucide="phone" class="w-5 h-5 stroke-[1.5]"></i>
+                            </div>
+                            <div>
+                                <h4 class="font-heading text-xs font-bold uppercase tracking-wider text-black mb-1">Teléfono de Atención</h4>
+                                <p class="text-sm font-light text-neutral-600">
+                                    <a href="tel:8441765448" class="hover:text-black font-semibold transition-colors">844-176-5448</a>
+                                </p>
+                            </div>
+                        </div>
+
+                        <!-- Correo Electrónico -->
+                        <div class="flex items-start gap-4">
+                            <div class="w-10 h-10 bg-black text-white flex items-center justify-center shrink-0 mt-1">
+                                <i data-lucide="mail" class="w-5 h-5 stroke-[1.5]"></i>
+                            </div>
+                            <div>
+                                <h4 class="font-heading text-xs font-bold uppercase tracking-wider text-black mb-1">Correo Electrónico</h4>
+                                <p class="text-sm font-light text-neutral-600">
+                                    <a href="mailto:gallyno.gl@outlook.com" class="hover:text-black font-semibold transition-colors">gallyno.gl@outlook.com</a>
+                                </p>
+                            </div>
+                        </div>
+
+                        <!-- Horario -->
+                        <div class="flex items-start gap-4">
+                            <div class="w-10 h-10 bg-black text-white flex items-center justify-center shrink-0 mt-1">
+                                <i data-lucide="clock" class="w-5 h-5 stroke-[1.5]"></i>
+                            </div>
+                            <div>
+                                <h4 class="font-heading text-xs font-bold uppercase tracking-wider text-black mb-1">Horario Operativo</h4>
+                                <p class="text-sm font-light text-neutral-600">
+                                    Lunes a Viernes: 8:00 - 18:00 hrs
+                                </p>
+                            </div>
+                        </div>
+
+                    </div>
+
+                    <!-- Enlace de acción rápido -->
+                    <div class="pt-4">
+                        <a href="mailto:gallyno.gl@outlook.com" class="w-full inline-flex items-center justify-center gap-3 bg-black text-white px-6 py-4 text-xs uppercase tracking-widest font-extrabold hover:bg-neutral-800 transition-colors">
+                            Enviar Mensaje Directo
+                            <i data-lucide="arrow-right" class="w-4 h-4"></i>
+                        </a>
+                    </div>
+
+                </div>
+
+                <!-- COLUMNA DERECHA: MAPA DE GOOGLE MAPS ESTILIZADO -->
+                <div class="lg:col-span-7 tech-border min-h-[450px] lg:min-h-[100%] overflow-hidden relative bg-neutral-100">
+                    <iframe 
+                        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d814.9968908590893!2d-100.97755860266294!3d25.458197893194345!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x86886d34ab33a44f%3A0x2aa3e5a3d4190533!2sBlvrd.%20Nazario%20Ortiz%20Garza%202060%2C%20Los%20Lagos%2C%2025253%20Saltillo%2C%20Coah.!5e1!3m2!1ses-419!2smx!4v1792707726233!5m2!1ses-419!2smx" 
+                        width="100%" 
+                        height="100%" 
+                        style="border:0;" 
+                        allowfullscreen="" 
+                        loading="lazy" 
+                        referrerpolicy="no-referrer-when-downgrade"
+                        title="Ubicación de Operadora de Inmuebles Gallyno en Saltillo"
+                        class="w-full h-full min-h-[450px] filter grayscale contrast-125 hover:grayscale-0 transition-all duration-500">
+                    </iframe>
+                </div>
+
+            </div>
+
+        </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer class="bg-neutral-950 text-white pt-20 pb-10 border-t border-neutral-800">
+        <div class="max-w-screen-2xl mx-auto px-6 lg:px-12 grid md:grid-cols-12 gap-12 mb-16">
+            
+            <!-- Identidad Texto Puro -->
+            <div class="md:col-span-5 space-y-4">
+                <h3 class="font-heading font-extrabold text-lg uppercase tracking-wider text-white">
+                    OPERADORA DE INMUEBLES GALLYNO
+                </h3>
+                <p class="text-neutral-400 text-sm font-light leading-relaxed max-w-md">
+                    Empresa dedicada a la construcción, arquitectura e ingeniería civil para el desarrollo de infraestructura e inmuebles de alta calidad.
+                </p>
+            </div>
+
+            <!-- Navegación -->
+            <div class="md:col-span-3 space-y-4">
+                <h4 class="font-heading text-xs uppercase tracking-widest font-bold text-white">Navegación</h4>
+                <ul class="space-y-2.5 text-sm font-light text-neutral-400">
+                    <li><a href="index.html" class="hover:text-white transition-colors">Inicio</a></li>
+                    <li><a href="nosotros.html" class="hover:text-white transition-colors">Nosotros</a></li>
+                    <li><a href="servicios.html" class="hover:text-white transition-colors">Servicios</a></li>
+                    <li><a href="contacto.html" class="hover:text-white transition-colors">Contacto</a></li>
+                </ul>
+            </div>
+
+            <!-- Datos Directos -->
+            <div class="md:col-span-4 space-y-4">
+                <h4 class="font-heading text-xs uppercase tracking-widest font-bold text-white">Oficinas y Contacto</h4>
+                <ul class="space-y-3 text-sm font-light text-neutral-400">
+                    <li class="flex items-start gap-3">
+                        <i data-lucide="map-pin" class="w-4 h-4 text-white shrink-0 mt-1"></i>
+                        <span>Nazario Ortiz Garza #2060 Int. 804-A, Col. Los Lagos Continental, Saltillo, Coahuila. C.P. 25253</span>
+                    </li>
+                    <li class="flex items-center gap-3">
+                        <i data-lucide="phone" class="w-4 h-4 text-white shrink-0"></i>
+                        <span>844-176-5448</span>
+                    </li>
+                    <li class="flex items-center gap-3">
+                        <i data-lucide="mail" class="w-4 h-4 text-white shrink-0"></i>
+                        <span>gallyno.gl@outlook.com</span>
+                    </li>
+                </ul>
+            </div>
+
+        </div>
+
+        <div class="max-w-screen-2xl mx-auto px-6 lg:px-12 border-t border-neutral-900 pt-8 flex flex-col md:flex-row justify-between items-center gap-4 text-xs text-neutral-500 font-light">
+            <p>© 2026 Operadora de Inmuebles Gallyno. Todos los derechos reservados.</p>
+        </div>
+    </footer>
+
+    <!-- SCRIPT DE INTERACTIVIDAD -->
+    <script>
+        lucide.createIcons();
+
+        const btnOpenMenu = document.getElementById('btn-open-menu');
+        const btnCloseMenu = document.getElementById('btn-close-menu');
+        const mobileMenu = document.getElementById('mobile-menu');
+        const mobileLinks = document.querySelectorAll('.mobile-link');
+
+        btnOpenMenu.addEventListener('click', () => {
+            mobileMenu.classList.remove('translate-x-full');
+            document.body.style.overflow = 'hidden'; 
+        });
+
+        const closeMenu = () => {
+            mobileMenu.classList.add('translate-x-full');
+            document.body.style.overflow = ''; 
+        };
+
+        btnCloseMenu.addEventListener('click', closeMenu);
+        mobileLinks.forEach(link => link.addEventListener('click', closeMenu));
+    </script>
+</body>
+</html>
